@@ -1,0 +1,24 @@
+.header .input {
+    border-radius: 50px;
+    padding-left:25px ;
+    width: 60vw;
+    background-color: rgb(237, 237, 250);
+    
+}
+.header input {
+    height: 50px;
+    width: 55vw;
+    border: 0;
+    font-size: 1.3rem;
+    outline: none;
+    background-color: rgb(237, 237, 250);
+    
+}
+
+@media (width < 900px) {
+    .header input {
+        
+        width: 45vw;
+    }
+    
+}

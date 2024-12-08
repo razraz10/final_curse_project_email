@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300&display=swap');
+
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.messageContent {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* הוסף צל עם הגדרות מסוימות */
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+.messageContent div{
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.messageContent .x{
+    background-color: black;
+    color: rgb(242, 250, 252);
+    width: 100%;
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 0.5%;
+    font-size: 1.8rem;
+    
+    
+}
+.messageContent .from{
+    border-bottom:1px solid rgb(170, 158, 158);
+    width: 100%;
+    font-weight: bold;
+    padding:2% ;
+    font-size: 1.5rem;
+}
+.messageContent .title{
+    font-size: 1.2rem;
+    width: 100%;
+    font-weight: bold;
+    border-bottom:1px solid rgb(170, 158, 158);
+    padding: 2%;
+}
+.messageContent .body{
+    width: 100%;
+    padding: 2%;
+}

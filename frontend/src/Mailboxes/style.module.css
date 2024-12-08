@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.inbox {
+    width: 85vw;
+    /* height: 85vh; */
+    background-color: rgb(237, 237, 250);
+    border-radius: 20px;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+
+
+}
+
+
+.inbox table {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.inbox table tr {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgb(242, 250, 252);
+    text-align: center;
+    align-items: center;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.inbox table tr:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.inbox table tr td {
+    height: 50px;
+
+
+}
+
+.inbox table tr .name {
+    width: 10vw;
+    font-size: 2rem;
+    overflow: hidden;
+
+
+}
+
+.inbox table tr .title {
+    width: 40vw;
+    font-size: 2rem;
+    overflow: hidden;
+
+}
+
+.inbox table tr .trash {
+    font-size: 2rem;
+    width: 5vw;
+
+}
+
+.inbox table tr .trash:hover {
+    transform: scale(1.2);
+    transition: transform 0.1s ease-in-out;
+}
+
+.inbox table tr .date {
+    width: 10vw;
+    font-size: 1.5rem;
+    overflow: hidden;
+
+}
+
+@media (width < 1200px) {
+    .inbox table tr .date {
+        width: 18vw;
+    }
+
+    .inbox table tr .name {
+        width: 8vw;
+    }
+
+    .inbox table tr .trash {
+        width: 3vw;
+
+    }
+
+}
+
+@media (width < 1000px) {
+
+    .inbox table tr .title,
+    .inbox table tr .name,
+    .inbox table tr .trash {
+        font-size: 1.4rem;
+    }
+
+    .inbox table tr .date {
+        display: none;
+    }
+
+}
+.isRead{
+    
+    font-size: 2rem;
+}
