@@ -116,6 +116,7 @@ async function deleteUser(id) {
   return await userController.delOne({ _id: id });
 }
 
+//ADD USER
 async function addUser(user) {
   const exist = await userController.readOne(user);
   if (exist) throw "User is exist already";
