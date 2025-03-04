@@ -15,7 +15,8 @@ import { getRefreshTokens, getTokensFromLocalStorage } from "../tokens_utilitys/
 
 export default function Content(props) {
 
-  const MY_URL = process.env.MY_URL
+  const MY_URL = import.meta.env.VITE_MY_URL;
+
   const { newEmail, setNewEmail } = useContext(NewEmailOpenContext);
   const [emailData, setEmailData] = useState({
     to: [],

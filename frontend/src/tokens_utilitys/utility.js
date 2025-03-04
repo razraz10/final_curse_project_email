@@ -21,7 +21,8 @@ export const getRefreshTokens = async (refreshToken, accessToken) => {
 
 
 export const refreshTokens = async (accessToken) => {
-    const MY_URL = process.env.MY_URL
+    const MY_URL = import.meta.env.VITE_MY_URL;
+
     try {
         const res = await axios.post(`${MY_URL}/refresh`, { accessToken });
         // console.log(res);

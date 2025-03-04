@@ -14,7 +14,8 @@ import { MdMessage } from "react-icons/md";
 
 export default function Mailboxes({ searchResult }) {
 
-  const MY_URL = process.env.MY_URL
+  const MY_URL = import.meta.env.VITE_MY_URL;
+
   const [emails, setEmails] = useState([]);
   const { navigation } = useContext(NavigationContext);
   const [messageContent, setMessageContent] = useState(false);

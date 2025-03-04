@@ -5,7 +5,8 @@ import UserContext from "../context/UseContext";
 
 export default function Registration() {
 
-  const MY_URL = process.env.MY_URL
+  const MY_URL = import.meta.env.VITE_MY_URL;
+  console.log("MY_URL:", MY_URL);
   const { setUser } = useContext(UserContext);
 
   const [data, setData] = useState({

@@ -10,7 +10,8 @@ import { getRefreshTokens, getTokensFromLocalStorage } from '../tokens_utilitys/
 
 export default function Editing() {
 
-  const MY_URL = process.env.MY_URL
+  const MY_URL = import.meta.env.VITE_MY_URL;
+
   const { profileImg, setProfileImg } = useContext(ProfileImgContext)
   const authToken = localStorage.getItem("token");
 

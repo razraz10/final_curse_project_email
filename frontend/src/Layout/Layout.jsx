@@ -11,7 +11,8 @@ const authToken = localStorage.getItem('token')
 const accessToken = localStorage.getItem('accessToken')
 
 export default function Layout(props) {
-  const MY_URL = process.env.MY_URL
+  const MY_URL = import.meta.env.VITE_MY_URL;
+
   const [searchResult, setSearchResult] = useState([]);
   const [navigation, setNavigation] = useState("inbox");
   const [previousNavigation, setPreviousNavigation] = useState("inbox")

@@ -8,7 +8,9 @@ import { Link } from 'react-router-dom'
 
 export default function Login() {
 
-  const MY_URL = process.env.MY_URL
+  const MY_URL = import.meta.env.VITE_MY_URL;
+  // console.log("import.meta.env:", import.meta.env);
+
   const { setUser } = useContext(UserContext)
   const [data, setData] = useState({})
 
