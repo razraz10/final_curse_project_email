@@ -16,7 +16,7 @@ app.use('/', userRouter)
 const massageRouter = require('./router/massage.router');
 app.use('/massages', massageRouter)
 const PORT =
-//  process.env.PORT ||
+ process.env.PORT ||
  3002;
 
 app.listen(PORT, () => {
