@@ -19,7 +19,7 @@ export default function Editing() {
 
     const refreshedToken = await getRefreshTokens(authToken, accessToken);
 
-    axios.post('https://email-server-8ncp.onrender.com/logout', {
+    axios.post('http://localhost:3002/logout', {
       accessToken: accessToken
     }, {
       headers: {
@@ -47,7 +47,7 @@ export default function Editing() {
     const refreshedToken = await getRefreshTokens(authToken, accessToken);
     try {
       const response = await axios.put(
-        `https://email-server-8ncp.onrender.com/user`,
+        `http://localhost:3002/user`,
         data,
         {
           headers: {
@@ -56,7 +56,7 @@ export default function Editing() {
         }
       );
 
-      console.log("res", response);
+      // console.log("res", response);
     } catch (error) {
       console.error("Error while updating email status:", error);
     }
@@ -69,15 +69,15 @@ export default function Editing() {
 
       const refreshedToken = await getRefreshTokens(authToken, accessToken);
       axios
-        .get(`https://email-server-8ncp.onrender.com/user`, {
+        .get(`http://localhost:3002/user`, {
           headers: {
             Authorization: `Bearer ${refreshedToken}`,
           },
         })
         .then((res) => {
-          console.log(res, "res");
+          // console.log(res, "res");
           setUser(res.data)
-          console.log(user);
+          // console.log(user);
         });
     }
     getUser()

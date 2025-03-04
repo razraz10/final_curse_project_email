@@ -22,11 +22,11 @@ export default function Mailboxes({ searchResult }) {
     const refreshedToken = await getRefreshTokens(authToken, accessToken);
 
     setMessageContent(email);
-    console.log(email._id);
+    // console.log(email._id);
 
     try {
       const response = await axios.put(
-        ` https://email-server-8ncp.onrender.com/massages/reading/${email._id}`,
+        ` http://localhost:3002/massages/reading/${email._id}`,
         null,
         {
           headers: {
@@ -35,7 +35,7 @@ export default function Mailboxes({ searchResult }) {
         }
       );
 
-      console.log("resSSSSSSSSSSSSSSSSSSS", response);
+      // console.log("resSSSSSSSSSSSSSSSSSSS", response);
     } catch (error) {
       console.error("Error while updating email status:", error);
     }
@@ -62,7 +62,7 @@ export default function Mailboxes({ searchResult }) {
       let variable = "";
       let myData = "MY INBOX";
       if (navigation === "inbox" || navigation === "outbox" || navigation === "trash") {
-        console.log(navigation);
+        // console.log(navigation);
         if (navigation === "inbox") {
           variable = "";
           myData = "MY INBOX";
@@ -78,14 +78,14 @@ export default function Mailboxes({ searchResult }) {
           myData = "MY TRASH";
         }
         axios
-          .get(`https://email-server-8ncp.onrender.com/massages/${variable}`,
+          .get(`http://localhost:3002/massages/${variable}`,
             {
               headers: {
                 Authorization: `Bearer ${refreshedToken}`
               }
             })
           .then((res) => {
-            console.log(res, "res");
+            // console.log(res, "res");
             setEmails(res.data[myData]);
           });
       }
@@ -111,7 +111,7 @@ export default function Mailboxes({ searchResult }) {
         deleted = "senderDelete"
       }
 
-      axios.delete(`https://email-server-8ncp.onrender.com/massages/${deleted}/${massagesId}`, {
+      axios.delete(`http://localhost:3002/massages/${deleted}/${massagesId}`, {
         headers: {
           Authorization: `Bearer ${refreshedToken}`
         }

@@ -28,7 +28,7 @@ export default function Content(props) {
     const refreshedToken = await getRefreshTokens(authToken, accessToken);
 
     axios
-      .post(`https://email-server-8ncp.onrender.com/massages/send/`, {
+      .post(`http://localhost:3002/send/`, {
         to: emailData.to,
         title: emailData.title,
         massageBody: emailData.body,

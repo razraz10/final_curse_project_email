@@ -12,14 +12,14 @@ export default function Login() {
   const [data, setData] = useState({})
 
   const handleChange = (e) => {
-    console.log(e.target.name);
+    // console.log(e.target.name);
     setData({ ...data, [e.target.name]: e.target.value })
   }
 
 
   const handleAxios = async () => {
     try {
-      const res = await axios.post('https://email-server-8ncp.onrender.com/login', {
+      const res = await axios.post('http://localhost:3002/login', {
         email: data.email,
         password: data.password
       })

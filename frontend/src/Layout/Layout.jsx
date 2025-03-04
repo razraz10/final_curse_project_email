@@ -24,7 +24,7 @@ export default function Layout(props) {
 
 
       const response = await axios.get(
-        "https://email-server-8ncp.onrender.com/massages/search",
+        "http://localhost:3002/massages/search",
         {
           params: {
             text: text,
@@ -39,7 +39,7 @@ export default function Layout(props) {
       }
 
       //YacovBinik@gmail.com
-      console.log(response.data);
+      // console.log(response.data);
       setSearchResult(response.data);
       if (!text.trim()) {
         setNavigation(previousNavigation);

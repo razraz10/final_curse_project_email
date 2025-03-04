@@ -20,10 +20,10 @@ export default function Registration() {
     });
   };
   const refreshTokens = async (accessToken) => {
-      console.log("lll");
+      // console.log("lll");
     try {
       const res = await axios.post(
-        `https://email-server-8ncp.onrender.com/refresh`,
+        `http://localhost:3002/refresh`,
         {accessToken}
       );
       const refreshToken = res.data.refresh;
@@ -37,9 +37,9 @@ export default function Registration() {
 
   const register = async () => {
     try {
-      const res = await axios.post("https://email-server-8ncp.onrender.com/user", data);
+      const res = await axios.post("http://localhost:3002/user", data);
       const refreshToken = await refreshTokens(res.data[1]);
-      console.log(refreshToken);
+      // console.log(refreshToken);
     } catch (err) {
       console.log(err);
     }
