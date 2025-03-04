@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 import { getRefreshTokens, getTokensFromLocalStorage } from '../tokens_utilitys/utility';
 
 export default function Editing() {
+
+  const MY_URL = process.env.MY_URL
   const { profileImg, setProfileImg } = useContext(ProfileImgContext)
   const authToken = localStorage.getItem("token");
 
@@ -19,7 +21,7 @@ export default function Editing() {
 
     const refreshedToken = await getRefreshTokens(authToken, accessToken);
 
-    axios.post('http://localhost:3002/logout', {
+    axios.post(`${MY_URL}/logout`, {
       accessToken: accessToken
     }, {
       headers: {
@@ -47,7 +49,7 @@ export default function Editing() {
     const refreshedToken = await getRefreshTokens(authToken, accessToken);
     try {
       const response = await axios.put(
-        `http://localhost:3002/user`,
+        `${MY_URL}/user`,
         data,
         {
           headers: {
@@ -69,7 +71,7 @@ export default function Editing() {
 
       const refreshedToken = await getRefreshTokens(authToken, accessToken);
       axios
-        .get(`http://localhost:3002/user`, {
+        .get(`${MY_URL}/user`, {
           headers: {
             Authorization: `Bearer ${refreshedToken}`,
           },

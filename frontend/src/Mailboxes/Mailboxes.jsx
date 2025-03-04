@@ -13,6 +13,8 @@ import { MdMessage } from "react-icons/md";
 
 
 export default function Mailboxes({ searchResult }) {
+
+  const MY_URL = process.env.MY_URL
   const [emails, setEmails] = useState([]);
   const { navigation } = useContext(NavigationContext);
   const [messageContent, setMessageContent] = useState(false);
@@ -26,7 +28,7 @@ export default function Mailboxes({ searchResult }) {
 
     try {
       const response = await axios.put(
-        ` http://localhost:3002/massages/reading/${email._id}`,
+        `${MY_URL}/massages/reading/${email._id}`,
         null,
         {
           headers: {
@@ -78,7 +80,7 @@ export default function Mailboxes({ searchResult }) {
           myData = "MY TRASH";
         }
         axios
-          .get(`http://localhost:3002/massages/${variable}`,
+          .get(`${MY_URL}/massages/${variable}`,
             {
               headers: {
                 Authorization: `Bearer ${refreshedToken}`
@@ -111,7 +113,7 @@ export default function Mailboxes({ searchResult }) {
         deleted = "senderDelete"
       }
 
-      axios.delete(`http://localhost:3002/massages/${deleted}/${massagesId}`, {
+      axios.delete(`${MY_URL}/massages/${deleted}/${massagesId}`, {
         headers: {
           Authorization: `Bearer ${refreshedToken}`
         }

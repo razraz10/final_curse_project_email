@@ -21,8 +21,9 @@ export const getRefreshTokens = async (refreshToken, accessToken) => {
 
 
 export const refreshTokens = async (accessToken) => {
+    const MY_URL = process.env.MY_URL
     try {
-        const res = await axios.post('http://localhost:3002/refresh', { accessToken });
+        const res = await axios.post(`${MY_URL}/refresh`, { accessToken });
         // console.log(res);
         const refreshToken = res.data.refresh
         localStorage.setItem('token', refreshToken)

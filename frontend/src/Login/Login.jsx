@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 
 export default function Login() {
 
+  const MY_URL = process.env.MY_URL
   const { setUser } = useContext(UserContext)
   const [data, setData] = useState({})
 
@@ -19,7 +20,7 @@ export default function Login() {
 
   const handleAxios = async () => {
     try {
-      const res = await axios.post('http://localhost:3002/login', {
+      const res = await axios.post(`${MY_URL}/login`, {
         email: data.email,
         password: data.password
       })

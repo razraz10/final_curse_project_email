@@ -4,6 +4,8 @@ import styles from "./style.module.css";
 import UserContext from "../context/UseContext";
 
 export default function Registration() {
+
+  const MY_URL = process.env.MY_URL
   const { setUser } = useContext(UserContext);
 
   const [data, setData] = useState({
@@ -23,7 +25,7 @@ export default function Registration() {
       // console.log("lll");
     try {
       const res = await axios.post(
-        `http://localhost:3002/refresh`,
+        `${MY_URL}/refresh`,
         {accessToken}
       );
       const refreshToken = res.data.refresh;
@@ -37,7 +39,7 @@ export default function Registration() {
 
   const register = async () => {
     try {
-      const res = await axios.post("http://localhost:3002/user", data);
+      const res = await axios.post(`${MY_URL}/user`, data);
       const refreshToken = await refreshTokens(res.data[1]);
       // console.log(refreshToken);
     } catch (err) {

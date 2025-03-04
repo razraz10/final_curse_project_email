@@ -11,6 +11,7 @@ const authToken = localStorage.getItem('token')
 const accessToken = localStorage.getItem('accessToken')
 
 export default function Layout(props) {
+  const MY_URL = process.env.MY_URL
   const [searchResult, setSearchResult] = useState([]);
   const [navigation, setNavigation] = useState("inbox");
   const [previousNavigation, setPreviousNavigation] = useState("inbox")
@@ -24,7 +25,7 @@ export default function Layout(props) {
 
 
       const response = await axios.get(
-        "http://localhost:3002/massages/search",
+        `${MY_URL}/massages/search`,
         {
           params: {
             text: text,

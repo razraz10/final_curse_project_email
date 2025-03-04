@@ -15,6 +15,7 @@ import { getRefreshTokens, getTokensFromLocalStorage } from "../tokens_utilitys/
 
 export default function Content(props) {
 
+  const MY_URL = process.env.MY_URL
   const { newEmail, setNewEmail } = useContext(NewEmailOpenContext);
   const [emailData, setEmailData] = useState({
     to: [],
@@ -28,7 +29,7 @@ export default function Content(props) {
     const refreshedToken = await getRefreshTokens(authToken, accessToken);
 
     axios
-      .post(`http://localhost:3002/send/`, {
+      .post(`${MY_URL}/send/`, {
         to: emailData.to,
         title: emailData.title,
         massageBody: emailData.body,
