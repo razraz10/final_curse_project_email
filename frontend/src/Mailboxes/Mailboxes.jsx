@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import NavigationContext from "../context/NavigationContext";
 import { jwtDecode } from "jwt-decode";
 import { getRefreshTokens, getTokensFromLocalStorage } from "../tokens_utilitys/utility";
-import MessageContent from "../MessageContent/MessageContent";
+import MessageContent from "../messageContent/MessageContent";
 import { MdMessage } from "react-icons/md";
 
 
@@ -25,7 +25,6 @@ export default function Mailboxes({ searchResult }) {
     const refreshedToken = await getRefreshTokens(authToken, accessToken);
 
     setMessageContent(email);
-    // console.log(email._id);
     // console.log(email._id);
 
     try {
