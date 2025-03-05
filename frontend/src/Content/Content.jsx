@@ -3,12 +3,12 @@ import Mailboxes from "../Mailboxes/Mailboxes";
 import Toolbar from "../Toolbar/Toolbar";
 import Editing from "../Editing/Editing";
 import styles from "./style.module.css";
-import NavigationContext from "../context/NavigationContext";
+// import NavigationContext from "../context/NavigationContext";
 import { Route, Routes } from "react-router-dom";
 import NewEmailOpenContext from "../context/NewEmailOpenContext";
 import { IoCloseSharp } from "react-icons/io5";
 import Login from "../Login/Login";
-import MessageContent from "../MessageContent/MessageContent";
+// import MessageContent from "../MessageContent/MessageContent";
 import axios from "axios";
 import { getRefreshTokens, getTokensFromLocalStorage } from "../tokens_utilitys/utility";
 
