@@ -26,6 +26,7 @@ export default function Mailboxes({ searchResult }) {
 
     setMessageContent(email);
     // console.log(email._id);
+    // console.log(email._id);
 
     try {
       const response = await axios.put(
